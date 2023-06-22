@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth.account',  # all basic user account actions
     'allauth.socialaccount',  # handles loggin in via sm providers
     'home',
+    'products',
 ]
 
 MIDDLEWARE = [
