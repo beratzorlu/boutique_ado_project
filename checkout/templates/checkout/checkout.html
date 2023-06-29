@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
@@ -21,7 +22,7 @@
         <div class="col">
             <hr>
             <h2 class="logo-font mb-4">
-                Shopping Bag
+                Checkout
             </h2>
             <hr>
         </div>
@@ -29,6 +30,7 @@
 
     <div class="row">
         <div class="col-12 col-lg-6 order-lg-last mb-5">
+            <p class="text-muted">Order Summary ({{ product_count }})</p>
             <div class="row">
                 <div class="col-7 offset-2">
                     <p class="mb-1 mt-0 small text-muted">Item</p>
@@ -67,8 +69,6 @@
                 </div>
             </div>
         </div>
-
-
         <div class="col-12 col-lg-6">
             <p class="text-muted">Please fill out the form below to register your order.</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
